@@ -8,7 +8,9 @@
 import Foundation
 
 extension URL {
-    static func getSearchMovies(_ searchText: String) -> URL? {
-        return URL(string: "\(Constants.MOVIE_SEARCH_BASIC_URL)?api_key=\(Constants.MOVIE_API_KEY)&query=\(searchText.replacingOccurrences(of: " ", with: "+"))")
+    static func getSearchMovies(_ apiKey: String, searchText: String) -> URL? {
+        let searchBaseURl = "\(Constants.MOVIE_BASIC_URL)search/movie"
+        let query = searchText.replacingOccurrences(of: " ", with: "+")
+        return URL(string: "\(searchBaseURl)?api_key=\(apiKey)&query=\(query)")
     }
 }
