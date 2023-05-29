@@ -26,6 +26,9 @@ struct SearchScreen: View {
                         Text(movie.title)
                     }
                 }
+                .modifier(ProgressViewModifier(isLoading: movieAVM.isLoading))
+                .modifier(ErrorViewModifier(error: $movieAVM.error))
+                .modifier(EmptyListViewModifier(isShowing: !movieAVM.isLoading && movieAVM.movies.isEmpty))
             }
             .navigationTitle("Movie Search")
         }

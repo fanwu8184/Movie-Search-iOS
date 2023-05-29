@@ -8,12 +8,6 @@
 import Foundation
 
 class NetworkService {
-    enum NetworkError: Error {
-        case badURL
-        case noData
-        case decodingError
-    }
-    
     private let session: URLSession
     private let apiKey: String
     
