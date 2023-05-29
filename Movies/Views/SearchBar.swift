@@ -8,24 +8,16 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @Binding var text: String
+    let searchAction: (String) -> ()
+    @State private var searchText = ""
     
     var body: some View {
         HStack {
-            TextField("Search movies", text: $text)
+            TextField("Search movies", text: $searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button(action: {
-                Task {
-                    let networkService = NetworkService()
-                    let result = await networkService.getSearchMovies(text)
-                    switch result {
-                    case .success(let searchMovieAPIResponse):
-                        print(searchMovieAPIResponse)
-                    case .failure(let e):
-                        print(e)
-                    }
-                }
+                searchAction(searchText)
             }) {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 20))
@@ -37,6 +29,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar { _ in }
     }
 }

@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct SearchScreen: View {
-    @State private var searchText = ""
+    @StateObject private var movieAVM = MovieAVM()
+    
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText)
-                    .padding()
+                SearchBar { searchText in
+                    Task {
+                        await movieAVM.serachMovies(searchText)
+                    }
+                }
+                .padding()
                 
                 List {
-                    // Display movie search results here
+                    ForEach(movieAVM.movies, id: \.id) { movie in
+                        Text(movie.title)
+                    }
                 }
             }
             .navigationTitle("Movie Search")
