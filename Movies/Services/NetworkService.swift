@@ -10,6 +10,7 @@ import Foundation
 class NetworkService {
     enum NetworkError: Error {
         case badURL
+        case noData
         case decodingError
     }
     
@@ -23,8 +24,8 @@ class NetworkService {
     
     func getSearchMovies(_ searchText: String) async -> Result<SearchMovieAPIResponse, NetworkError> {
         guard let url = URL.getSearchMovies(apiKey, searchText: searchText) else { return  .failure(.badURL) }
+        guard let (data, _) = try? await URLSession.shared.data(from: url) else { return .failure(.noData) }
         do {
-            let (data, _) = try await session.data(from: url)
             let searchMovieAPIResponse = try JSONDecoder().decode(SearchMovieAPIResponse.self, from: data)
             return .success(searchMovieAPIResponse)
         } catch {
