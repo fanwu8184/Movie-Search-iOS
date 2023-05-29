@@ -16,7 +16,16 @@ struct SearchBar: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button(action: {
-                // Perform search here
+                Task {
+                    let networkService = NetworkService()
+                    let result = await networkService.getSearchMovies(text)
+                    switch result {
+                    case .success(let searchMovieAPIResponse):
+                        print(searchMovieAPIResponse)
+                    case .failure(let e):
+                        print(e)
+                    }
+                }
             }) {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 20))
