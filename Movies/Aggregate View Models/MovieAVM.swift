@@ -12,6 +12,9 @@ class MovieAVM: ObservableObject {
     @Published var error: Error? = nil
     @Published var isLoading = false
     private let networkService: NetworkService
+    var isShowingEmptyListInfo: Bool {
+        movies.isEmpty && !isLoading && error == nil
+    }
 
     init(_ networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
