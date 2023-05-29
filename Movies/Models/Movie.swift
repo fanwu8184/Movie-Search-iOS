@@ -13,4 +13,10 @@ struct Movie: Decodable {
     let release_date: String
     let poster_path: String?
     let overview: String
+    var posterURL: URL? {
+        if let path = poster_path {
+            return URL(string: "\(Constants.POSTER_BASIC_URL)\(path)")
+        }
+        return nil
+    }
 }

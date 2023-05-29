@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     static let MOVIE_API_KEY = "1af4b1256b666425b6ebe4bbc2f145c3"
     static let MOVIE_BASIC_URL = "https://api.themoviedb.org/3/"
+    static let POSTER_BASIC_URL = "https://image.tmdb.org/t/p/w500"
 }

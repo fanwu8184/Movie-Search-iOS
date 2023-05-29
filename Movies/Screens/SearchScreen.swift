@@ -12,7 +12,7 @@ struct SearchScreen: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 SearchBar { searchText in
                     Task {
@@ -23,7 +23,11 @@ struct SearchScreen: View {
                 
                 List {
                     ForEach(movieAVM.movies, id: \.id) { movie in
-                        Text(movie.title)
+                        NavigationLink {
+                            MovieDetailView(movie: movie)
+                        } label: {
+                            MovieCellView(movie: movie)
+                        }
                     }
                 }
                 .modifier(ProgressViewModifier(isLoading: movieAVM.isLoading))

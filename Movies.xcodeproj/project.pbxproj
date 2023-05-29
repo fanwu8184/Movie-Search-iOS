@@ -29,6 +29,8 @@
 		B93EB9A92A2453D400BB9DB6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9A82A2453D400BB9DB6 /* NetworkError.swift */; };
 		B93EB9AB2A24540E00BB9DB6 /* NetworkErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AA2A24540E00BB9DB6 /* NetworkErrorExtension.swift */; };
 		B93EB9AD2A24565E00BB9DB6 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AC2A24565E00BB9DB6 /* EmptyListViewModifier.swift */; };
+		B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */; };
+		B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		B93EB9A82A2453D400BB9DB6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B93EB9AA2A24540E00BB9DB6 /* NetworkErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorExtension.swift; sourceTree = "<group>"; };
 		B93EB9AC2A24565E00BB9DB6 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
+		B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				B93EB98B2A24134000BB9DB6 /* SearchBar.swift */,
+				B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */,
+				B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,8 +385,10 @@
 				B93EB9A92A2453D400BB9DB6 /* NetworkError.swift in Sources */,
 				B93EB95C2A24110C00BB9DB6 /* MoviesApp.swift in Sources */,
 				B93EB99D2A2425A900BB9DB6 /* Movie.swift in Sources */,
+				B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */,
 				B93EB9A02A2432D100BB9DB6 /* MovieAVM.swift in Sources */,
 				B93EB98F2A24148B00BB9DB6 /* SearchScreen.swift in Sources */,
+				B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */,
 				B93EB9A32A24523200BB9DB6 /* ProgressViewModifier.swift in Sources */,
 				B93EB9AD2A24565E00BB9DB6 /* EmptyListViewModifier.swift in Sources */,
 			);
