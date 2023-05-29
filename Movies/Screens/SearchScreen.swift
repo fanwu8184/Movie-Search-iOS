@@ -10,11 +10,11 @@ import SwiftUI
 struct SearchScreen: View {
     @StateObject private var movieAVM = MovieAVM()
     
-    
     var body: some View {
         NavigationStack {
             VStack {
                 SearchBar { searchText in
+                    hideKeyboard()
                     Task {
                         await movieAVM.serachMovies(searchText)
                     }

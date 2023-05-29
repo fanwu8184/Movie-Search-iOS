@@ -31,6 +31,7 @@
 		B93EB9AD2A24565E00BB9DB6 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AC2A24565E00BB9DB6 /* EmptyListViewModifier.swift */; };
 		B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */; };
 		B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */; };
+		B93EB9B32A25733900BB9DB6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		B93EB9AC2A24565E00BB9DB6 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
 		B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 		B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				B93EB9942A24207C00BB9DB6 /* URLExtension.swift */,
 				B93EB9AA2A24540E00BB9DB6 /* NetworkErrorExtension.swift */,
+				B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				B93EB95C2A24110C00BB9DB6 /* MoviesApp.swift in Sources */,
 				B93EB99D2A2425A900BB9DB6 /* Movie.swift in Sources */,
 				B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */,
+				B93EB9B32A25733900BB9DB6 /* ViewExtension.swift in Sources */,
 				B93EB9A02A2432D100BB9DB6 /* MovieAVM.swift in Sources */,
 				B93EB98F2A24148B00BB9DB6 /* SearchScreen.swift in Sources */,
 				B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */,
