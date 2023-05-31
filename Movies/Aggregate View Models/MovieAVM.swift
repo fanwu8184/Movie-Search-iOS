@@ -51,6 +51,7 @@ class MovieAVM: ObservableObject {
             movies = networkService.getOfflineMovies().filter { movie in
                 movie.title.localizedCaseInsensitiveContains(searchText)
             }
+            totalResults = movies.count
         }
         isLoading = false
     }
