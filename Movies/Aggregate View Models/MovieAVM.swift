@@ -31,6 +31,9 @@ class MovieAVM: ObservableObject {
             movies = searchMovieAPIResponse.results
         case .failure(let err):
             error = err
+            movies = networkService.getOfflineMovies().filter { movie in
+                movie.title.localizedCaseInsensitiveContains(searchText)
+            }
         }
         isLoading = false
     }

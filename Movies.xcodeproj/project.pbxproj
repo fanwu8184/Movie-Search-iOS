@@ -11,7 +11,7 @@
 		B93EB95E2A24110C00BB9DB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB95D2A24110C00BB9DB6 /* ContentView.swift */; };
 		B93EB9602A24110D00BB9DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93EB95F2A24110D00BB9DB6 /* Assets.xcassets */; };
 		B93EB9632A24110D00BB9DB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93EB9622A24110D00BB9DB6 /* Preview Assets.xcassets */; };
-		B93EB9652A24110D00BB9DB6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9642A24110D00BB9DB6 /* Persistence.swift */; };
+		B93EB9652A24110D00BB9DB6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9642A24110D00BB9DB6 /* PersistenceController.swift */; };
 		B93EB9682A24110D00BB9DB6 /* Movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9662A24110D00BB9DB6 /* Movies.xcdatamodeld */; };
 		B93EB9722A24110D00BB9DB6 /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9712A24110D00BB9DB6 /* MoviesTests.swift */; };
 		B93EB97C2A24110D00BB9DB6 /* MoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB97B2A24110D00BB9DB6 /* MoviesUITests.swift */; };
@@ -32,6 +32,7 @@
 		B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */; };
 		B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */; };
 		B93EB9B32A25733900BB9DB6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */; };
+		B9492E7A2A26CBE2006ADDCB /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9492E792A26CBE2006ADDCB /* CacheAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		B93EB95D2A24110C00BB9DB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B93EB95F2A24110D00BB9DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B93EB9622A24110D00BB9DB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B93EB9642A24110D00BB9DB6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B93EB9642A24110D00BB9DB6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		B93EB9672A24110D00BB9DB6 /* Movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movies.xcdatamodel; sourceTree = "<group>"; };
 		B93EB96D2A24110D00BB9DB6 /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93EB9712A24110D00BB9DB6 /* MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTests.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		B93EB9AE2A2457D500BB9DB6 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 		B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		B9492E792A26CBE2006ADDCB /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				B93EB95B2A24110C00BB9DB6 /* MoviesApp.swift */,
 				B93EB95D2A24110C00BB9DB6 /* ContentView.swift */,
+				B9492E782A26CBC6006ADDCB /* Support Files */,
 				B93EB9A12A2451FF00BB9DB6 /* Modifiers */,
 				B93EB99E2A24329000BB9DB6 /* Aggregate View Models */,
 				B93EB9992A2422F800BB9DB6 /* Models */,
@@ -141,7 +144,6 @@
 				B93EB98D2A24135200BB9DB6 /* Screens */,
 				B93EB98A2A24131F00BB9DB6 /* Views */,
 				B93EB95F2A24110D00BB9DB6 /* Assets.xcassets */,
-				B93EB9642A24110D00BB9DB6 /* Persistence.swift */,
 				B93EB9662A24110D00BB9DB6 /* Movies.xcdatamodeld */,
 				B93EB9612A24110D00BB9DB6 /* Preview Content */,
 			);
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B93EB9972A24227E00BB9DB6 /* NetworkService.swift */,
+				B93EB9642A24110D00BB9DB6 /* PersistenceController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -243,6 +246,14 @@
 				B93EB9AC2A24565E00BB9DB6 /* EmptyListViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		B9492E782A26CBC6006ADDCB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9492E792A26CBE2006ADDCB /* CacheAsyncImage.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,10 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93EB99B2A24231F00BB9DB6 /* SearchMovieAPIResponse.swift in Sources */,
-				B93EB9652A24110D00BB9DB6 /* Persistence.swift in Sources */,
+				B93EB9652A24110D00BB9DB6 /* PersistenceController.swift in Sources */,
 				B93EB95E2A24110C00BB9DB6 /* ContentView.swift in Sources */,
 				B93EB98C2A24134000BB9DB6 /* SearchBar.swift in Sources */,
 				B93EB9A52A2452A800BB9DB6 /* ErrorViewModifier.swift in Sources */,
+				B9492E7A2A26CBE2006ADDCB /* CacheAsyncImage.swift in Sources */,
 				B93EB9682A24110D00BB9DB6 /* Movies.xcdatamodeld in Sources */,
 				B93EB9982A24227E00BB9DB6 /* NetworkService.swift in Sources */,
 				B93EB9AB2A24540E00BB9DB6 /* NetworkErrorExtension.swift in Sources */,

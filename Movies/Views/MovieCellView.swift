@@ -17,17 +17,25 @@ struct MovieCellView: View {
             
             Text(movie.release_date)
             
-            AsyncImage(
+            CacheAsyncImage(
                 url: movie.posterURL
-            ) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            ) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                case .failure:
+                    Image(systemName: "exclamationmark.icloud")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                @unknown default:
+                    Image(systemName: "photo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
             }
             .frame(height: 500)
             .frame(maxWidth: .infinity)
@@ -37,14 +45,6 @@ struct MovieCellView: View {
 
 struct MovieCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCellView(
-            movie: Movie(
-                id: 75780,
-                title: "Jack Reacher",
-                release_date: "2012-12-20",
-                poster_path: "/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg",
-                overview: "When a gunman takes five lives with six shots, all evidence points to the suspect in custody. On interrogation, the suspect offers up a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for the truth, pitting Jack Reacher against an unexpected enemy, with a skill for violence and a secret to keep."
-            )
-        )
+        MovieCellView(movie: Movie.mockData)
     }
 }
