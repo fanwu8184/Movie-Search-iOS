@@ -19,8 +19,8 @@ class NetworkService {
         self.persistenceController = persistenceController
     }
     
-    func getSearchMovies(_ searchText: String) async -> Result<SearchMovieAPIResponse, NetworkError> {
-        guard let url = URL.getSearchMovies(apiKey, searchText: searchText) else { return  .failure(.badURL) }
+    func getSearchMovies(_ searchText: String, page: Int = 1) async -> Result<SearchMovieAPIResponse, NetworkError> {
+        guard let url = URL.getSearchMovies(apiKey, searchText: searchText, page: page) else { return  .failure(.badURL) }
         guard let (data, _) = try? await session.data(from: url) else { return .failure(.noData) }
         do {
             let searchMovieAPIResponse = try JSONDecoder().decode(SearchMovieAPIResponse.self, from: data)

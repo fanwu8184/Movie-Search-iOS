@@ -17,10 +17,14 @@ struct SearchScreen: View {
                 SearchBar { searchText in
                     hideKeyboard()
                     Task {
-                        await movieAVM.serachMovies(searchText)
+                        await movieAVM.initialSearchMovies(searchText)
                     }
                 }
                 .padding()
+                
+                if !movieAVM.movies.isEmpty {
+                    Text("Results: \(movieAVM.movies.count)/\(movieAVM.totalResults)")
+                }
                 
                 List {
                     ForEach(movieAVM.movies, id: \.id) { movie in
@@ -30,8 +34,25 @@ struct SearchScreen: View {
                             MovieCellView(movie: movie)
                         }
                     }
+                    
+                    if movieAVM.isLoading {
+                        ProgressView()
+                            .padding()
+                    } else if movieAVM.currentPage < movieAVM.totalPage {
+                        Button(action: {
+                            Task {
+                                await movieAVM.searchMoviesForMore()
+                            }
+                        }) {
+                            HStack {
+                                Spacer()
+                                Text("Load More")
+                                Spacer()
+                            }
+                            .padding()
+                        }
+                    }
                 }
-                .modifier(ProgressViewModifier(isLoading: movieAVM.isLoading))
                 .modifier(ErrorViewModifier(error: $movieAVM.error))
                 .modifier(EmptyListViewModifier(isShowing: movieAVM.isShowingEmptyListInfo))
                 .modifier(ErrorViewModifier(error: $persistenceController.error))
