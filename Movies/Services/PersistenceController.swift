@@ -54,6 +54,7 @@ class PersistenceController {
         cdMovie.id = Int32(movie.id)
         cdMovie.title = movie.title
         cdMovie.release_date = movie.release_date
+        cdMovie.poster_path = movie.poster_path
         cdMovie.overview = movie.overview
         return save(context: context)
     }
