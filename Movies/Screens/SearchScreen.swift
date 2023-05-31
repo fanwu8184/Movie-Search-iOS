@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchScreen: View {
     @StateObject private var movieAVM = MovieAVM()
+    @StateObject private var persistenceController = PersistenceController.shared
     
     var body: some View {
         NavigationStack {
@@ -32,6 +33,7 @@ struct SearchScreen: View {
                 }
                 .modifier(ProgressViewModifier(isLoading: movieAVM.isLoading))
                 .modifier(ErrorViewModifier(error: $movieAVM.error))
+                .modifier(ErrorViewModifier(error: $persistenceController.error))
                 .modifier(EmptyListViewModifier(isShowing: movieAVM.isShowingEmptyListInfo))
             }
             .navigationTitle("Movie Search")

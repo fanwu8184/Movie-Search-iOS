@@ -26,7 +26,7 @@ class NetworkService {
             let searchMovieAPIResponse = try JSONDecoder().decode(SearchMovieAPIResponse.self, from: data)
             let backgroundContext = persistenceController.container.newBackgroundContext()
             for movie in searchMovieAPIResponse.results {
-                _ = persistenceController.add(movie, context: backgroundContext)
+                persistenceController.add(movie, context: backgroundContext)
             }
             return .success(searchMovieAPIResponse)
         } catch {

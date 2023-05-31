@@ -33,6 +33,8 @@
 		B93EB9B12A2457E600BB9DB6 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */; };
 		B93EB9B32A25733900BB9DB6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */; };
 		B9492E7A2A26CBE2006ADDCB /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9492E792A26CBE2006ADDCB /* CacheAsyncImage.swift */; };
+		B9492E822A26F5A8006ADDCB /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9492E812A26F5A8006ADDCB /* PersistenceError.swift */; };
+		B9492E842A26F735006ADDCB /* PersistenceErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9492E832A26F735006ADDCB /* PersistenceErrorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		B93EB9B02A2457E600BB9DB6 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B9492E792A26CBE2006ADDCB /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		B9492E812A26F5A8006ADDCB /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		B9492E832A26F735006ADDCB /* PersistenceErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceErrorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			children = (
 				B93EB9942A24207C00BB9DB6 /* URLExtension.swift */,
 				B93EB9AA2A24540E00BB9DB6 /* NetworkErrorExtension.swift */,
+				B9492E832A26F735006ADDCB /* PersistenceErrorExtension.swift */,
 				B93EB9B22A25733900BB9DB6 /* ViewExtension.swift */,
 			);
 			path = Extensions;
@@ -226,6 +231,7 @@
 				B93EB99A2A24231F00BB9DB6 /* SearchMovieAPIResponse.swift */,
 				B93EB99C2A2425A900BB9DB6 /* Movie.swift */,
 				B93EB9A82A2453D400BB9DB6 /* NetworkError.swift */,
+				B9492E812A26F5A8006ADDCB /* PersistenceError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9492E842A26F735006ADDCB /* PersistenceErrorExtension.swift in Sources */,
 				B93EB99B2A24231F00BB9DB6 /* SearchMovieAPIResponse.swift in Sources */,
 				B93EB9652A24110D00BB9DB6 /* PersistenceController.swift in Sources */,
 				B93EB95E2A24110C00BB9DB6 /* ContentView.swift in Sources */,
@@ -398,6 +405,7 @@
 				B93EB9922A241C0100BB9DB6 /* Constants.swift in Sources */,
 				B93EB9952A24207C00BB9DB6 /* URLExtension.swift in Sources */,
 				B93EB9A92A2453D400BB9DB6 /* NetworkError.swift in Sources */,
+				B9492E822A26F5A8006ADDCB /* PersistenceError.swift in Sources */,
 				B93EB95C2A24110C00BB9DB6 /* MoviesApp.swift in Sources */,
 				B93EB99D2A2425A900BB9DB6 /* Movie.swift in Sources */,
 				B93EB9AF2A2457D500BB9DB6 /* MovieCellView.swift in Sources */,

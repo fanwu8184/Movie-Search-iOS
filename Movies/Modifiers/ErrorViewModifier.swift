@@ -24,6 +24,12 @@ struct ErrorViewModifier: ViewModifier {
                             }
                             .buttonStyle(.borderedProminent)
                         }
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .shadow(color: .gray, radius: 5)
+                        )
                     }
                 }
             )
