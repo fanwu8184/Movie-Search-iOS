@@ -33,8 +33,8 @@ struct SearchScreen: View {
                 }
                 .modifier(ProgressViewModifier(isLoading: movieAVM.isLoading))
                 .modifier(ErrorViewModifier(error: $movieAVM.error))
-                .modifier(ErrorViewModifier(error: $persistenceController.error))
                 .modifier(EmptyListViewModifier(isShowing: movieAVM.isShowingEmptyListInfo))
+                .modifier(ErrorViewModifier(error: $persistenceController.error))
             }
             .navigationTitle("Movie Search")
         }

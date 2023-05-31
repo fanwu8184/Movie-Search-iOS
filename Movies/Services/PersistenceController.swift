@@ -19,8 +19,8 @@ class PersistenceController: ObservableObject {
         container.loadPersistentStores { [weak self] desc, err in
             if let e = err {
                 print(e)
+                self?.error = PersistenceError.failSetup
             }
-            self?.error = PersistenceError.failSetup
         }
         NotificationCenter.default.addObserver(self, selector: #selector(contextDidSave(_:)), name: NSManagedObjectContext.didSaveObjectsNotification, object: nil)
     }
@@ -45,9 +45,12 @@ class PersistenceController: ObservableObject {
         do {
             try context.save()
         } catch {
-            print(error)
-            DispatchQueue.main.async { [weak self] in
-                self?.error = PersistenceError.failSave
+            let errorCode = (error as NSError).code
+            if errorCode != 133021 {
+                print(error)
+                DispatchQueue.main.async { [weak self] in
+                    self?.error = PersistenceError.failSave
+                }
             }
         }
     }
