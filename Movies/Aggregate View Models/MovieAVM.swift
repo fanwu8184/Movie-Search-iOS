@@ -48,9 +48,7 @@ class MovieAVM: ObservableObject {
             totalResults = searchMovieAPIResponse.total_results
         case .failure(let err):
             error = err
-            movies = networkService.getOfflineMovies().filter { movie in
-                movie.title.localizedCaseInsensitiveContains(searchText)
-            }
+            movies = networkService.getOfflineMovies(searchText)
             totalResults = movies.count
             currentPage = 1
             totalPage = 1

@@ -34,8 +34,12 @@ class NetworkService {
         }
     }
     
-    func getOfflineMovies() -> [Movie] {
+    func getOfflineMovies(_ withTitle: String? = nil) -> [Movie] {
         let fetchRequest: NSFetchRequest<CDMovie> = CDMovie.fetchRequest()
+        if let title = withTitle {
+            let predicate = NSPredicate(format: "title CONTAINS[c] %@", title)
+            fetchRequest.predicate = predicate
+        }
         do {
             let cdMovies = try persistenceController.mainContext.fetch(fetchRequest)
             return cdMovies.map { Movie(cdMovie: $0) }
