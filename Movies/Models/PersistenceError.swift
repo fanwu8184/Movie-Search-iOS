@@ -10,4 +10,5 @@ import Foundation
 enum PersistenceError: Error {
     case failSetup
     case failSave
+    case failGet
 }

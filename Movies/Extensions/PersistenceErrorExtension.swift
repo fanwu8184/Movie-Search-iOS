@@ -14,6 +14,8 @@ extension PersistenceError: LocalizedError {
             return NSLocalizedString("Failed to set up Core Data.", comment: "Persistence Error")
         case .failSave:
             return NSLocalizedString("Failed to save data on your iPhone.", comment: "Persistence Error")
+        case .failGet:
+            return NSLocalizedString("Failed to get data on your iPhone.", comment: "Persistence Error")
         }
     }
 }

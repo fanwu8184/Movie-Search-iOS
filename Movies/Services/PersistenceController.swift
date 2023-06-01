@@ -47,7 +47,6 @@ class PersistenceController: ObservableObject {
         } catch {
             let errorCode = (error as NSError).code
             if errorCode != 133021 {
-                print(error)
                 DispatchQueue.main.async { [weak self] in
                     self?.error = PersistenceError.failSave
                 }
@@ -63,5 +62,21 @@ class PersistenceController: ObservableObject {
         cdMovie.poster_path = movie.poster_path
         cdMovie.overview = movie.overview
         save(context: context)
+    }
+    
+    func getMovies(_ withTitle: String? = nil) -> [CDMovie] {
+        let fetchRequest: NSFetchRequest<CDMovie> = CDMovie.fetchRequest()
+        if let title = withTitle {
+            let predicate = NSPredicate(format: "title CONTAINS[c] %@", title)
+            fetchRequest.predicate = predicate
+        }
+        do {
+            return try mainContext.fetch(fetchRequest)
+        } catch {
+            DispatchQueue.main.async { [weak self] in
+                self?.error = PersistenceError.failGet
+            }
+            return []
+        }
     }
 }

@@ -14,13 +14,13 @@ class MovieAVM: ObservableObject {
     @Published var currentPage = 1
     @Published var totalPage = 1
     @Published var totalResults = 0
-    private let networkService: NetworkService
+    private let networkService: RealNetworkService
     private var currentSearchText = ""
     var isShowingEmptyListInfo: Bool {
         movies.isEmpty && !isLoading && error == nil
     }
 
-    init(_ networkService: NetworkService = NetworkService()) {
+    init(_ networkService: RealNetworkService = RealNetworkService()) {
         self.networkService = networkService
     }
     
@@ -48,7 +48,8 @@ class MovieAVM: ObservableObject {
             totalResults = searchMovieAPIResponse.total_results
         case .failure(let err):
             error = err
-            movies = networkService.getOfflineMovies(searchText)
+            let cdMovies = PersistenceController.shared.getMovies(searchText)
+            movies = cdMovies.map { Movie(cdMovie: $0) }
             totalResults = movies.count
             currentPage = 1
             totalPage = 1

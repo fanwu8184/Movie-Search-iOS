@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class NetworkService {
+class RealNetworkService: NetworkService {
     private let session: URLSession
     private let apiKey: String
     private let persistenceController: PersistenceController
@@ -19,7 +19,7 @@ class NetworkService {
         self.persistenceController = persistenceController
     }
     
-    func getSearchMovies(_ searchText: String, page: Int = 1) async -> Result<SearchMovieAPIResponse, NetworkError> {
+    func getSearchMovies(_ searchText: String, page: Int) async -> Result<SearchMovieAPIResponse, NetworkError> {
         guard let url = URL.getSearchMovies(apiKey, searchText: searchText, page: page) else { return  .failure(.badURL) }
         guard let (data, _) = try? await session.data(from: url) else { return .failure(.noData) }
         do {
@@ -31,21 +31,6 @@ class NetworkService {
             return .success(searchMovieAPIResponse)
         } catch {
             return .failure(.decodingError)
-        }
-    }
-    
-    func getOfflineMovies(_ withTitle: String? = nil) -> [Movie] {
-        let fetchRequest: NSFetchRequest<CDMovie> = CDMovie.fetchRequest()
-        if let title = withTitle {
-            let predicate = NSPredicate(format: "title CONTAINS[c] %@", title)
-            fetchRequest.predicate = predicate
-        }
-        do {
-            let cdMovies = try persistenceController.mainContext.fetch(fetchRequest)
-            return cdMovies.map { Movie(cdMovie: $0) }
-        } catch {
-            print("Failed to fetch movies from Core Data: \(error.localizedDescription)")
-            return []
         }
     }
 }
