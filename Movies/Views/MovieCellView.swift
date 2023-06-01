@@ -17,28 +17,9 @@ struct MovieCellView: View {
             
             Text(movie.release_date)
             
-            CacheAsyncImage(
-                url: movie.posterURL
-            ) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                case .failure:
-                    Image(systemName: "exclamationmark.icloud")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                @unknown default:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-            }
-            .frame(height: 500)
-            .frame(maxWidth: .infinity)
+            ImageInDiskCacheView(url: movie.posterURL)
+                .frame(height: 500)
+                .frame(maxWidth: .infinity)
         }
     }
 }

@@ -52,6 +52,8 @@ class MovieAVM: ObservableObject {
                 movie.title.localizedCaseInsensitiveContains(searchText)
             }
             totalResults = movies.count
+            currentPage = 1
+            totalPage = 1
         }
         isLoading = false
     }
