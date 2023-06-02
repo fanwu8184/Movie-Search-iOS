@@ -14,8 +14,10 @@ struct MovieCellView: View {
         VStack(alignment: .leading) {
             Text(movie.title)
                 .font(.title)
+                .accessibilityIdentifier("MovieTitleText")
             
             Text(movie.release_date)
+                .accessibilityIdentifier("MovieReleaseDateText")
             
             ImageInDiskCacheView(url: movie.posterURL)
                 .frame(height: 500)

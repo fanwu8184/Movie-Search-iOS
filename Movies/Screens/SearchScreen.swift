@@ -56,6 +56,7 @@ struct SearchScreen: View {
                 .modifier(ErrorViewModifier(error: $movieAVM.error))
                 .modifier(EmptyListViewModifier(isShowing: movieAVM.isShowingEmptyListInfo))
                 .modifier(ErrorViewModifier(error: $persistenceController.error))
+                .accessibilityIdentifier("MovieList")
             }
             .navigationTitle("Movie Search")
         }

@@ -15,6 +15,7 @@ struct SearchBar: View {
         HStack {
             TextField("Search movies", text: $searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .accessibilityIdentifier("SearchTextField")
             
             Button(action: {
                 searchAction(searchText)
@@ -23,6 +24,7 @@ struct SearchBar: View {
                     .font(.system(size: 20))
                     .foregroundColor(.gray)
             }
+            .accessibilityIdentifier("SearchButton")
         }
     }
 }

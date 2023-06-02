@@ -15,8 +15,10 @@ struct MovieDetailView: View {
             MovieCellView(movie: movie)
             
             Text(movie.overview)
+                .accessibilityIdentifier("MovieOverviewText")
         }
         .padding()
+        .accessibilityIdentifier("MovieDetailView")
     }
 }
 
