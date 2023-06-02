@@ -11,6 +11,10 @@ class MockNetworkService: NetworkService {
     var mockSearchMovieAPIResponse: Result<SearchMovieAPIResponse, NetworkError>?
     
     func getSearchMovies(_ searchText: String, page: Int) async -> Result<SearchMovieAPIResponse, NetworkError> {
-        return .failure(.badURL)
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        if let mockSearchMovieAPIResponse = mockSearchMovieAPIResponse {
+            return mockSearchMovieAPIResponse
+        }
+        return .failure(.noData)
     }
 }

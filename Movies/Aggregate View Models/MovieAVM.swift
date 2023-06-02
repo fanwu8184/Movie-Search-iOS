@@ -14,13 +14,13 @@ class MovieAVM: ObservableObject {
     @Published var currentPage = 1
     @Published var totalPage = 1
     @Published var totalResults = 0
-    private let networkService: RealNetworkService
+    private let networkService: NetworkService
     private var currentSearchText = ""
     var isShowingEmptyListInfo: Bool {
         movies.isEmpty && !isLoading && error == nil
     }
 
-    init(_ networkService: RealNetworkService = RealNetworkService()) {
+    init(_ networkService: NetworkService = RealNetworkService()) {
         self.networkService = networkService
     }
     

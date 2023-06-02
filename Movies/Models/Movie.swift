@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie: Decodable, Equatable {
     let id: Int
     let title: String
     let release_date: String
@@ -43,4 +43,8 @@ struct Movie: Decodable {
         poster_path: "/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg",
         overview: "When a gunman takes five lives with six shots, all evidence points to the suspect in custody. On interrogation, the suspect offers up a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for the truth, pitting Jack Reacher against an unexpected enemy, with a skill for violence and a secret to keep."
     )
+    
+    static func ==(lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
