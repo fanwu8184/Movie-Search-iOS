@@ -94,6 +94,7 @@
 		B9541E622A29761500E52A42 /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
 		B9541E642A2978D300E52A42 /* MyFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileManagerTests.swift; sourceTree = "<group>"; };
 		B97736252A2985E100733566 /* MovieSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchUITests.swift; sourceTree = "<group>"; };
+		B9DF29952A2D424E00CB5C8D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 		B93EB94F2A24110C00BB9DB6 = {
 			isa = PBXGroup;
 			children = (
+				B9DF29952A2D424E00CB5C8D /* README.md */,
 				B93EB95A2A24110C00BB9DB6 /* Movies */,
 				B93EB9702A24110D00BB9DB6 /* MoviesTests */,
 				B93EB97A2A24110D00BB9DB6 /* MoviesUITests */,
